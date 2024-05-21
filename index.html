@@ -29,10 +29,7 @@
         <img src="WhatsApp Image 2021-07-04 at 11.45 1.png" alt="">
       </a>
       <div class="header__nav">
-        <a href="#">
-          <img src="Frame.svg" alt="">
-        </a>
-        <a href="#">
+        <a href="#" id="loginLink">
           <img src="mail.svg" alt="">
         </a>
         <a href="#">
@@ -41,6 +38,19 @@
       </div>
     </div>
   </header>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="form-heading">Форма авторизації</h2>
+        <form id="loginForm" method="post">
+            <input type="text" id="username" name="username" placeholder="Ім'я користувача" required>
+            <input type="password" id="password" name="password" placeholder="Пароль" required>
+            <button type="submit" class="login-btn">Увійти</button>
+        </form>
+    </div>
+  </div>
+<script src="login.js"></script>
 
 <main class="main_content">
   <div class="main1">
@@ -95,10 +105,17 @@
 </div>
 </main>
 
-<footer class="footer">
-
+<footer>
+  <div class="footer-content">
+      <h3>Tuotown</h3>
+        <h3 class="footer__heading">Контактна інформація</h3>
+        <p>Адреса: Хмельницька обл., місто Хмельницький, вулиця Інститутська, будинок 11 </p>
+        <p>Телефон: +380975084099</p>
+        <p>Електрона пошта : zubkoandriy2005@gmail.com</p>
+  </div>
+  <div class="footer-bottom">
+      <p>© 2024 Tuotown. Всі права захищені.</p>
+  </div>
 </footer>
-
-
 </body>
 </html>
