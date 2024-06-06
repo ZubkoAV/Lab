@@ -57,7 +57,7 @@ form.addEventListener('submit',function(e){
       },
       credentials: 'include'
     })
-      .then((response) => response.json())
+      .then((response) => response.json(''))
       .then((data) => {
         console.log(data)
         if (data.code !== 200) {
@@ -84,7 +84,7 @@ form2.addEventListener('submit',function(e){
       },
       credentials: 'include'
     })
-      .then((response) => response.json())
+      .then((response) => response.json(''))
       .then((data) => {
         console.log(data)
         if (data.code !== 200) {
