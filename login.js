@@ -1,51 +1,98 @@
 document.addEventListener("DOMContentLoaded", function() {
     var modal = document.getElementById("loginModal");
+    var modal2 = document.getElementById("mapModal");
+    var modal3 = document.getElementById("mailModal");
     var loginLink = document.getElementById("loginLink");
     var span = document.getElementsByClassName("close")[0];
-
-    // Відображення модального вікна при натисканні на посилання "Авторизуватися"
+    var span2 = document.getElementsByClassName("close")[1];
+    var span3 = document.getElementsByClassName("close")[2];
+    var map = document.getElementById("map");
+    var mail = document.getElementById("mailLink");
     loginLink.onclick = function(event) {
-        event.preventDefault(); // Запобігаємо переходу по посиланню
+        event.preventDefault(); 
         modal.style.display = "block";
     }
+    
+    map.onclick = function(event) {
+      event.preventDefault();
+      modal2.style.display = "block";
+    }
 
-    // Закриття модального вікна при натисканні на X
+    mail.onclick = function(event) {
+      event.preventDefault();
+      modal3.style.display = "block";
+    }
+
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    // Закриття модального вікна при натисканні за межами вікна
+    span2.onclick = function() {
+      modal2.style.display = "none";
+    }
+
+    span3.onclick = function() {
+      modal3.style.display = "none";
+    }
+    
     window.onclick = function(event) {
-        if (event.target == modal) {
+        if (event.target == modal || event.target == modal2 || event.target == modal3) {
             modal.style.display = "none";
+            modal2.style.display = "none";
+            modal3.style.display = "none";
         }
     }
+const form=document.getElementById('loginForm')
+form.addEventListener('submit',function(e){
+    e.preventDefault()
+    const formData = new URLSearchParams();
+    formData.append('username', this.username.value);
+    formData.append('password', this.password.value);
 
-    // Обробка форми авторизації
-    var form = document.getElementById("loginForm");
-    form.onsubmit = function(event) {
-        event.preventDefault(); // Запобігаємо звичайній відправці форми
-
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-
-        // Зберігання імені користувача і пароля у sessionStorage
-        sessionStorage.setItem("username", username);
-        sessionStorage.setItem("password", password);
-
-        // Перевірка адміністративного доступу
-        if (username === "admin" && password === "admin_password") {
-            sessionStorage.setItem("isAdmin", true);
-        } else {
-            sessionStorage.setItem("isAdmin", false);
+    fetch(`http://localhost/api/`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      credentials: 'include'
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        if (data.code !== 200) {
+          return;
         }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+})
+const form2=document.getElementById('mailForm')
+form2.addEventListener('submit',function(e){
+    e.preventDefault()
+    const formData = new URLSearchParams();
+    formData.append('username', this.username.value);
+    formData.append('email', this.email.value);
+    formData.append('message', this.message.value);
 
-        // Зберігання даних користувача у localStorage
-        var users = JSON.parse(localStorage.getItem("users")) || [];
-        users.push({ username: username, password: password, role: username === "admin" ? "Адміністратор" : "Користувач" });
-        localStorage.setItem("users", JSON.stringify(users));
-        
-        // Перенаправлення на сторінку data.html
-        window.location.href = "data.html";
-    }
+    fetch(`http://localhost/apidata/`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      credentials: 'include'
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        if (data.code !== 200) {
+          return;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+})
 });

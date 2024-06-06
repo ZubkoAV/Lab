@@ -102,7 +102,6 @@
 
 .sd{
   position: absolute;
-  width: 144px;
   height: 21px;
   left: 9%;
   bottom: 20%;
@@ -136,6 +135,8 @@ top: 340px;
 border: 2px solid #C80000;
 border-radius: 27px;
 }
+
+#map{margin-left: 10px;}
 
 .n{
 position: absolute;

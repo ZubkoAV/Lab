@@ -21,7 +21,7 @@
         <a href="#" id="loginLink">
           <p class="sd">Вхід</p>
         </a>
-        <a href="#">
+        <a href="#123" id="map">
           <img src="map pin.svg" alt="">
         </a>
       </div>
@@ -29,11 +29,8 @@
         <img src="WhatsApp Image 2021-07-04 at 11.45 1.png" alt="">
       </a>
       <div class="header__nav">
-        <a href="#">
+        <a href="#" id="mailLink">
           <img src="mail.svg" alt="">
-        </a>
-        <a href="#">
-          <img src="search.svg" alt="">
         </a>
       </div>
     </div>
@@ -50,6 +47,34 @@
         </form>
     </div>
   </div>
+  <div id="mapModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="form-heading">Місцезнаходження</h2>
+        <iframe
+            title="Мапа"
+            data-aos="fade-up"
+            data-aos-anchor=".location__title"
+            width="100%"
+            height="454"
+            loading="lazy"
+            allowfullscreen
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJixe7REMGMkcRZMnZJDsL89k&key=AIzaSyBQw9OAB357kU7Z_EYgxzQOXKTZIlV0U_g"
+          ></iframe>
+    </div>
+  </div>
+  <div id="mailModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="form-heading">Форма зв'язку</h2>
+        <form id="loginForm" method="post">
+            <input type="text" id="username" name="username" placeholder="Ім'я користувача" required>
+            <input type="email" id="email" name="email" placeholder="Електрона пошта" required>
+            <input type="text" id="message" name="message" placeholder="Повідомлення" required>
+            <button type="submit" class="login-btn">Відправити</button>
+        </form>
+    </div>
+  </div>
 <script src="login.js"></script>
 
 <main class="main_content">
@@ -61,7 +86,7 @@
         Ножі «Tuotown» – це головний інструмент кухарів та секрет кулінарної майстерності
       </h2>
     <div class="more">
-      <a href="#">
+      <a href="#g">
         <p class="m">Детальніше</p>
       </a>
     </div>
@@ -86,7 +111,7 @@
   </div>
   <div class="q"></div>
   <div class="w"></div>
-  <h1 class="g">Tuotown – легендарні ножі, що створюють шедеври</h1>
+  <h1 class="g" id="g">Tuotown – легендарні ножі, що створюють шедеври</h1>
   <h2 class="h">Компанія «Tuotown» – ексклюзивний представник професійних кухонних ножів, виготовлених найкращими майстрами Східної Азії із застосуванням передового європейського обладнання та сучасних матеріалів. Вони відрізняються ідеальним балансом та фантастичною гостротою. Поєднують у собі вікові традиції та нові розробки. Також пропонуємо широкий асортимент супутніх товарів.</h2>
   <h2 class="j">Справжня краса ножа - досконала функціональність і візуальна гармонія. Цей предмет здавна супроводжував людину: від зорі цивілізації до сьогоднішніх днів. Протягом усієї історії людства він був вірним помічником, незамінним інструментом і грізною зброєю. Пропонуємо вироби Hi-end якості за доступними цінами справжнім цінителям японських ножів.</h2>
   <h2 class="k">Відмінною рисою нашого інтернет-магазину є унікальні торгові пропозиції, ексклюзивність продукції, незмінно висока якість та вигідні ціни. Здійснюємо продажі елітних японських кухонних ножів для професіоналів і любителів. У великій асортиментній лінійці представлені вироби для різних потреб і будь-якого бюджету — від столових приладів до шеф-ножів.</h2>
@@ -110,7 +135,7 @@
       <h3>Tuotown</h3>
         <h3 class="footer__heading">Контактна інформація</h3>
         <p>Адреса: Хмельницька обл., місто Хмельницький, вулиця Інститутська, будинок 11 </p>
-        <p>Телефон: +380975084099</p>
+        <p>Телефон: +380965114313</p>
         <p>Електрона пошта : zubkoandriy2005@gmail.com</p>
   </div>
   <div class="footer-bottom">
